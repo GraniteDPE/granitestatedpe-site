@@ -47,7 +47,12 @@
     {"@type": "Offer", "itemOffered": {"@type": "Service", "name": "Commercial Pilot Helicopter Checkride"}},
     {"@type": "Offer", "itemOffered": {"@type": "Service", "name": "Instrument Helicopter Checkride"}},
     {"@type": "Offer", "itemOffered": {"@type": "Service", "name": "Foreign Pilot Examination"}},
-    {"@type": "Offer", "itemOffered": {"@type": "Service", "name": "Military Competency Examination"}}
+    {"@type": "Offer", "itemOffered": {"@type": "Service", "name": "Military Competency Examination"}},
+    {"@type": "Offer", "itemOffered": {"@type": "Service", "name": "Helicopter Flight Instruction"}},
+    {"@type": "Offer", "itemOffered": {"@type": "Service", "name": "Biennial Flight Review"}},
+    {"@type": "Offer", "itemOffered": {"@type": "Service", "name": "Instrument Proficiency Check"}},
+    {"@type": "Offer", "itemOffered": {"@type": "Service", "name": "Safety Pilot Services"}},
+    {"@type": "Offer", "itemOffered": {"@type": "Service", "name": "Aircraft Repositioning"}}
   ]
 }
 </script>
@@ -103,11 +108,12 @@
     position:sticky;top:env(safe-area-inset-top,0px);z-index:10;
     background:var(--paper);border-bottom:1px solid var(--line);
   }
-  .navbar{display:flex;align-items:center;justify-content:space-between;padding:16px 28px;max-width:1040px;margin:0 auto;}
-  .brand{font-family:'Fraunces',serif;font-size:1.3rem;font-weight:700;color:var(--ink);text-decoration:none;letter-spacing:-0.01em;line-height:1.2;}
+  .navbar{display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;row-gap:12px;padding:16px 28px;max-width:1040px;margin:0 auto;}
+  .brand{font-family:'Fraunces',serif;font-size:1.3rem;font-weight:700;color:var(--ink);text-decoration:none;letter-spacing:-0.01em;line-height:1.2;white-space:nowrap;}
   .brand span{color:var(--amber-deep);}
-  .brand small{display:block;font-family:'Inter',sans-serif;font-size:.72rem;font-weight:500;color:var(--ink-soft);letter-spacing:.02em;margin-top:1px;}
-  nav a{color:var(--ink-soft);text-decoration:none;font-size:.92rem;margin-left:28px;}
+  .brand small{display:block;font-family:'Inter',sans-serif;font-size:.72rem;font-weight:500;color:var(--ink-soft);letter-spacing:.02em;margin-top:1px;white-space:normal;}
+  nav{display:flex;align-items:center;flex-wrap:wrap;row-gap:10px;}
+  nav a{color:var(--ink-soft);text-decoration:none;font-size:.92rem;margin-left:24px;white-space:nowrap;}
   nav a:hover{color:var(--ink);}
   .navcta{
     background:var(--sky);color:#fff;padding:9px 18px;border-radius:2px;font-size:.9rem;text-decoration:none;
@@ -302,6 +308,7 @@
       <a href="#background">Background</a>
       <a href="#fleet">Aircraft</a>
       <a href="#services">Checkrides</a>
+      <a href="#additional-services">Other Services</a>
       <a href="#schedule" class="navcta"><span class="cta-full">Request a Checkride</span><span class="cta-short">Request</span></a>
     </nav>
   </div>
@@ -562,6 +569,37 @@
   </section>
 </div>
 
+<section id="additional-services">
+  <div class="wrap">
+    <div class="section-head">
+      <p class="eyebrow">Beyond the checkride</p>
+      <h2>Flight instruction and other pilot services.</h2>
+    </div>
+    <div class="service-list">
+      <div class="service-row">
+        <h3>Flight Instruction</h3>
+        <p>Primary, instrument, and commercial dual instruction as a CFII, in Robinson, MD 500, Bell, and Schweizer 300 helicopters.</p>
+      </div>
+      <div class="service-row">
+        <h3>Biennial Flight Review (BFR)</h3>
+        <p>Flight review satisfying 14 CFR 61.56, tailored to your aircraft and typical mission.</p>
+      </div>
+      <div class="service-row">
+        <h3>Instrument Proficiency Check (IPC)</h3>
+        <p>Regain or maintain instrument currency under 14 CFR 61.57(d).</p>
+      </div>
+      <div class="service-row">
+        <h3>Safety Pilot Services</h3>
+        <p>Acting safety pilot for instrument practice under simulated instrument conditions.</p>
+      </div>
+      <div class="service-row">
+        <h3>Aircraft Repositioning</h3>
+        <p>Ferry and repositioning flights between operating locations.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
 <section id="schedule" class="photo-band">
   <div class="wrap form-shell">
     <div class="form-note">
@@ -596,7 +634,7 @@
         </div>
         <div class="field-row">
           <div class="field">
-            <label for="testtype">Checkride type</label>
+            <label for="testtype">Service requested</label>
             <select id="testtype" name="testtype">
               <option>Private Pilot — Helicopter</option>
               <option>Commercial Pilot — Helicopter</option>
@@ -604,6 +642,11 @@
               <option>Foreign Pilot examination</option>
               <option>Military Competency examination</option>
               <option>Administrative action (SIC/SOE/ATP removal, RPC, Night Flight)</option>
+              <option>Flight Instruction</option>
+              <option>Biennial Flight Review (BFR)</option>
+              <option>Instrument Proficiency Check (IPC)</option>
+              <option>Safety Pilot Services</option>
+              <option>Aircraft Repositioning</option>
               <option>Other</option>
             </select>
           </div>
